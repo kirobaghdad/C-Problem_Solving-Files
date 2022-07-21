@@ -8,7 +8,7 @@
       "name": "(gdb) Launch",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/make_AP.exe",
+      "program": "${workspaceFolder}/also_try_minecraft.exe",
       "args": [],
       "stopAtEntry": true,
       "cwd": "${fileDirname}",

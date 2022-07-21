@@ -1,5 +1,15 @@
 {
   "files.associations": {
-    "algorithm": "cpp"
+    "algorithm": "cpp",
+    "string": "cpp",
+    "xstring": "cpp",
+    "vector": "cpp",
+    "xtree": "cpp",
+    "map": "cpp",
+    "utility": "cpp",
+    "xiosbase": "cpp",
+    "xlocale": "cpp",
+    "xutility": "cpp",
+    "deque": "cpp"
   }
 }

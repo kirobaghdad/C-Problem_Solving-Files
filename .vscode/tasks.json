@@ -5,7 +5,13 @@
       "label": "build myfile",
       "type": "shell",
       "command": "g++",
-      "args": ["-std=c++14", "-g", "-o", "make_AP.exe", "make_AP.cpp"],
+      "args": [
+        "-std=c++14",
+        "-g",
+        "-o",
+        "also_try_minecraft.exe",
+        "also_try_minecraft.cpp"
+      ],
       "group": "build"
     },
     {
