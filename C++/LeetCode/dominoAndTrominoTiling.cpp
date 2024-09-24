@@ -1,9 +1,6 @@
 #include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
-ios::sync_with_stdio(false);
-cin.tie(nullptr);
-cout.tie(nullptr);
 
 class Solution
 {
@@ -54,6 +51,9 @@ public:
 
     int numTilings(int n)
     {
+        ios::sync_with_stdio(false);
+        cin.tie(nullptr);
+        cout.tie(nullptr);
         dp = vector<int>(n, -1);
         m = 1e9 + 7;
 
