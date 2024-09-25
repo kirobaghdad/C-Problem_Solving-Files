@@ -7,21 +7,21 @@ class Solution
 public:
     int maxProfit(vector<int> prices, int fee)
     {
-        int n = prices.size();
-        int hold = -prices[0]; // Maximum profit when holding a stock
-        int notHold = 0;       // Maximum profit when not holding a stock
+        int profit = 0;
+        int stocks = -prices[0] - fee;
 
-        for (int i = 1; i < n; i++)
+        for (int i = 1; i < prices.size(); i++)
         {
-            int prevHold = hold;
-            hold = max(hold, notHold - prices[i]);
-            notHold = max(notHold, prevHold + prices[i] - fee);
+            // Sell or not to sell that is the question
+            profit = max(profit, prices[i] + stocks);
+
+            // Buy or not to buy that is the question
+            stocks = max(stocks, profit - prices[i] - fee);
         }
 
-        return notHold;
+        return profit;
     }
 };
-
 int main()
 {
     Solution s;
