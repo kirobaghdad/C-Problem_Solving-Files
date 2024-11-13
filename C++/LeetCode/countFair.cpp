@@ -5,62 +5,21 @@ using namespace std;
 class Solution
 {
 public:
-    long long BS(map<int, int> &m, int low, int up)
+    long long countFairPairs(vector<int> nums, int lower, int upper)
     {
         ios::sync_with_stdio(false);
         cin.tie(nullptr);
         cout.tie(nullptr);
-        auto it = m.lower_bound(low);
-
-        if (it->first > up)
-            return 0;
-
-        auto it1 = m.lower_bound(up);
-
-        if (it1->first != up && it1 == m.begin())
-            return 0;
-
-        if (it1->first != up)
-            it1--;
-
-        long long ans = it1->second - it->second + 1;
-
-        return ans;
-    }
-
-    long long countFairPairs(vector<int> nums, int lower, int upper)
-    {
         long long ans = 0;
 
         sort(nums.begin(), nums.end());
 
-        map<int, int> m;
-
-        for (int i = 0; i < nums.size(); i++)
+        for (int i = 0; i < nums.size() - 1; i++)
         {
-            m[nums[i]] = i;
+            auto up = upper_bound(nums.begin() + i + 1, nums.end(), upper - nums[i]);
+            auto low = lower_bound(nums.begin() + i + 1, nums.end(), lower - nums[i]);
 
-            i++;
-
-            while (i < nums.size() && nums[i] == nums[i - 1])
-                i++;
-
-            i--;
-        }
-
-        long long temp;
-
-        for (int i = 0; i < nums.size(); i++)
-        {
-            if (nums[i] > lower - nums[i] && nums[i] > upper - nums[i])
-                break;
-
-            temp = BS(m, lower - nums[i], upper - nums[i]);
-
-            if (!temp)
-                break;
-
-            ans += temp;
+            ans += up - low;
         }
 
         return ans;
@@ -70,7 +29,7 @@ int main()
 {
     Solution s;
 
-    cout << s.countFairPairs({1, 7, 9, 2, 5}, 11, 11);
+    cout << s.countFairPairs({0, 0, 0, 0, 0}, 0, 0);
 
     return 0;
 }
