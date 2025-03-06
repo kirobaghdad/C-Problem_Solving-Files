@@ -13,10 +13,10 @@ public:
 
         int n = grid.size() * grid.size();
         int sum = (n * (n + 1)) / 2;
-        int sum_of_squares = (n * (n + 1) * (2 * n + 1)) / 6;
+        long long sum_of_squares = ((long long)n * (n + 1) * (2 * n + 1)) / 6;
 
         int act_sum = 0;
-        int act_sum_of_squares = 0;
+        long long act_sum_of_squares = 0;
 
         for (auto &it : grid)
         {
@@ -35,6 +35,7 @@ public:
         return {(sum_a_b - diff_a_b) / 2, (diff_a_b + sum_a_b) / 2};
     }
 };
+
 int main()
 {
     Solution s;
