@@ -27,12 +27,12 @@ public:
             }
         }
 
-        // a - b
-        int diff_a_b = sum - act_sum;
+        // b - a
+        int diff_b_a = sum - act_sum;
 
-        int sum_a_b = (sum_of_squares - act_sum_of_squares) / diff_a_b;
+        int sum_a_b = (sum_of_squares - act_sum_of_squares) / diff_b_a;
 
-        return {(sum_a_b - diff_a_b) / 2, (diff_a_b + sum_a_b) / 2};
+        return {(sum_a_b - diff_b_a) / 2, (diff_b_a + sum_a_b) / 2};
     }
 };
 
@@ -40,7 +40,7 @@ int main()
 {
     Solution s;
 
-    s.findMissingAndRepeatedValues({{1, 3}, {2, 2}});
+    vector<int> ans = s.findMissingAndRepeatedValues({{1, 3}, {2, 2}});
 
     return 0;
 }
